@@ -15,22 +15,16 @@ class App extends Component {
   }
   handleClick = keyVal => {
     if (keyVal) {
-      debugger;
-      console.log('clcikeddd! - ' + keyVal);
       this.props.lockActions.updateCurrentInput(keyVal);
     }
   };
   clearContent = keyVal => {
     if (keyVal) {
-      debugger;
-      console.log('clcikeddd! - ' + keyVal);
       this.props.lockActions.clearCurrentInput(keyVal);
     }
   };
   enterValue = keyVal => {
     if (keyVal && this.props.lkStore.lock.locked) {
-      debugger;
-      console.log('clcikeddd! - ' + keyVal);
       this.props.lockActions.validateCurrentInput(
         this.props.lkStore.lock.currentInput
       );
@@ -155,7 +149,7 @@ class App extends Component {
           <div className="col-md-6">
             <div className="display">
               {!this.props.lkStore.lock.valid?"INVALID":(this.props.lkStore.lock.currentInput === ''
-                ? '****'
+                ? ''
                 : this.props.lkStore.lock.currentInput)}
             </div>
             <div
@@ -173,7 +167,6 @@ class App extends Component {
 }
 
 function mapStateToProps(state) {
-  debugger;
   return {
     lkStore: state
   };

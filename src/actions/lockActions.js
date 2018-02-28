@@ -10,9 +10,6 @@ export function clearCurrentInput() {
 export function validateCurrentInput(inputNumber) {
   return { type: types.VALIDATE_CURRENT_INPUT, inputData: inputNumber};
 }
-export function updateLockStatus(status) {
-    return { type: types.UPDATE_LOCKSTATUS, newStatus: status};
-}
 
 export function updateCurrentPin(inputNumber) {
     return { type: types.UPDATE_CURRENT_PIN, newPin: inputNumber };
