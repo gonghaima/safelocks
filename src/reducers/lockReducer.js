@@ -25,6 +25,7 @@ export default function lock(state = initialState, action) {
     case CLEAR_CURRENT_INPUT:
       let newState3 = Object.assign({}, state);
       newState3.currentInput = '';
+      newState3.valid = true;
       return newState3;
     case VALIDATE_CURRENT_INPUT:
       let newState2 = Object.assign({}, state);
