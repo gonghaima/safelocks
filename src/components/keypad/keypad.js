@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as lockActions from '../../actions/lockActions';
+import KeyButton from './button/button'
 
 class Keypad extends Component {
     constructor(props, context) {
@@ -36,108 +37,18 @@ class Keypad extends Component {
             <div className="buttonPanel col-md-6">
                 <div className="keypad">
                     <div className="row">
-                        <div className="col-sm-4">
-                            <button
-                                className="btn btn-primary btn-block"
-                                onClick={() => this.handleClick('1')}
-                            >
-                                1
-                  </button>
-                        </div>
-                        <div className="col-sm-4">
-                            <button
-                                className="btn btn-primary btn-block"
-                                onClick={() => this.handleClick('2')}
-                            >
-                                2
-                  </button>
-                        </div>
-                        <div className="col-sm-4">
-                            <button
-                                className="btn btn-primary btn-block"
-                                onClick={() => this.handleClick('3')}
-                            >
-                                3
-                  </button>
-                        </div>
+                        {["1", "2", "3"].map(cs => <KeyButton key={cs} name={cs} onClick={() => this.handleClick(cs)} />)}
                     </div>
                     <div className="row">
-                        <div className="col-sm-4">
-                            <button
-                                className="btn btn-primary btn-block"
-                                onClick={() => this.handleClick('4')}
-                            >
-                                4
-                  </button>
-                        </div>
-                        <div className="col-sm-4">
-                            <button
-                                className="btn btn-primary btn-block"
-                                onClick={() => this.handleClick('5')}
-                            >
-                                5
-                  </button>
-                        </div>
-                        <div className="col-sm-4">
-                            <button
-                                className="btn btn-primary btn-block"
-                                onClick={() => this.handleClick('6')}
-                            >
-                                6
-                  </button>
-                        </div>
+                        {["4", "5", "6"].map(cs => <KeyButton key={cs} name={cs} onClick={() => this.handleClick(cs)} />)}
                     </div>
                     <div className="row">
-                        <div className="col-sm-4">
-                            <button
-                                className="btn btn-primary btn-block"
-                                onClick={() => this.handleClick('7')}
-                            >
-                                7
-                  </button>
-                        </div>
-                        <div className="col-sm-4">
-                            <button
-                                className="btn btn-primary btn-block"
-                                onClick={() => this.handleClick('8')}
-                            >
-                                8
-                  </button>
-                        </div>
-                        <div className="col-sm-4">
-                            <button
-                                className="btn btn-primary btn-block"
-                                onClick={() => this.handleClick('9')}
-                            >
-                                9
-                  </button>
-                        </div>
+                        {["7", "8", "9"].map(cs => <KeyButton key={cs} name={cs} onClick={() => this.handleClick(cs)} />)}
                     </div>
                     <div className="row">
-                        <div className="col-sm-4">
-                            <button
-                                className="btn btn-primary btn-block"
-                                onClick={() => this.clearContent('clr')}
-                            >
-                                CLR
-                  </button>
-                        </div>
-                        <div className="col-sm-4">
-                            <button
-                                className="btn btn-primary btn-block"
-                                onClick={() => this.handleClick('0')}
-                            >
-                                0
-                  </button>
-                        </div>
-                        <div className="col-sm-4">
-                            <button
-                                className="btn btn-primary btn-block"
-                                onClick={() => this.enterValue('Enter')}
-                            >
-                                =>
-                  </button>
-                        </div>
+                        <KeyButton key={"CLR"} name={"CLR"} onClick={() => this.clearContent("CLR")} />
+                        <KeyButton key={"0"} name={"0"} onClick={() => this.handleClick("0")} />
+                        <KeyButton key={"=>"} name={"=>"} onClick={() => this.enterValue("=>")} />
                     </div>
                 </div>
             </div>

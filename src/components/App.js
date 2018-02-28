@@ -8,7 +8,7 @@ import { bindActionCreators } from 'redux';
 import * as lockActions from '../actions/lockActions';
 
 class App extends Component {
-  
+
   componentWillMount() {
     this.props.lockActions.InitStore();
   }
@@ -17,10 +17,8 @@ class App extends Component {
     return (
       <div className="safe-lock">
         <div className="row">
-          
-            <Keypad/>
-          <DisplayPanel/>
-          
+          <Keypad />
+          <DisplayPanel />
         </div>
       </div>
     );

@@ -4,9 +4,6 @@ import { bindActionCreators } from 'redux';
 import * as lockActions from '../../actions/lockActions';
 
 class DisplayPanel extends Component {
-    constructor(props, context) {
-        super(props, context);
-    };
     render() {
         return (
             <div className="col-md-6">
