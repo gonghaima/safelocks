@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux';
-import lockReducer from './lockReducer';
+import lock from './lockReducer';
 
 const rootReducer = combineReducers({
-  lockReducer
+  lock
 });
 
 export default rootReducer;
